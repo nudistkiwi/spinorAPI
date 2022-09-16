@@ -56,9 +56,9 @@ std::string callback2(std::string A) {
 
 int main() {
 	std::function<std::string(std::string)> func = callback;
-	std::function<std::string(std::string)> func2 = callback2;
+	//std::function<std::string(std::string)> func2 = callback2;
 
-	start_https_server(func, func2, "8080");
+	start_https_server(func, "8080");
 
 	return(4);
 }
