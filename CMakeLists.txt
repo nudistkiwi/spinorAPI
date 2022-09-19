@@ -23,5 +23,5 @@ endif (WIN32)
 
 
 add_executable(API main.cpp)
-target_link_libraries (API ssl-client https_server_basic)
+target_link_libraries (API ssl-client httpserver_ssl)
 
