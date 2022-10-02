@@ -5319,3 +5319,4 @@ build/ZERO_CHECK.vcxproj
 build/ZERO_CHECK.vcxproj.filters
 library/httpserver_ssl/
 library/ssl-client/
+build/Release/vendors/Flot/excanvas.min.js
