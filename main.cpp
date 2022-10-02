@@ -18,7 +18,7 @@
 #include <httpserver_ssl.h>
 
 
-std::string callback(std::string A) {
+std::string callback(http::request<http::string_body>& A) {
 
 //https_client_request req("GET", "/monitor/?line=U6&station=Dresdner&countdown");
 //req.send_request("vtapi.floscodes.net","80");
@@ -95,7 +95,7 @@ catch(...){}
 	req2.send_request("api.pushover.net", "443");
 
 	
-	return("index.html");
+	return("/success.html");
 };
 
 
@@ -117,12 +117,14 @@ int main() {
 
 
 
-
-	std::function<std::string(std::string)> func = callback;
+	
+	std::function<std::string(http::request<http::string_body>&)> func = callback;
+	bundle funcs(func,"8080");
+	
 	//std::function<std::string(std::string)> func2 = callback2;
 
 	//start_https_server(func, "8080");
-	httpserver_ssl(func);
+	httpserver_ssl(funcs);
 
 
 }
