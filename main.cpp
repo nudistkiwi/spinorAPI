@@ -90,7 +90,7 @@ catch(...){}
 
 
 
-	req2.set_body(JS);
+	req2.set_body(JS.dump());
 	//req.send_request("vtapi.floscodes.net","443");
 	req2.send_request("api.pushover.net", "443");
 
